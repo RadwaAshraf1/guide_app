@@ -98,22 +98,17 @@ class _SignInUserState extends State<SignInUser> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
+                       Text(
                         "Do not have an account?",
-                        style: TextStyle(color: gray1),
+                        style: TextStyle(color: gray1.withOpacity(.5)),
                       ),
                       TextButton(
                           onPressed: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (context) => const SignupUser(),
-                            //   ),
-                            // );
+                            Navigator.of(context).pushNamed(userSignUpScreen);
                           },
                           child: const Text(
                             'Sign Up',
-                            style: TextStyle(color: green2),
+                            style: TextStyle(color: green1,fontWeight: FontWeight.bold),
                           )),
                     ],
                   )

@@ -5,6 +5,7 @@ import 'package:guide/view/screens/user_forgetpassword.dart';
 import 'package:guide/view/screens/user_otpscreen.dart';
 import 'package:guide/view/screens/user_resetpassword.dart';
 import 'package:guide/view/screens/user_signin.dart';
+import 'package:guide/view/screens/user_signup.dart';
 import 'package:guide/view/screens/user_successpasswors.dart';
 
 class AppRoute{
@@ -21,6 +22,10 @@ class AppRoute{
        case userLoginScreen:
         return MaterialPageRoute(
           builder: (_) =>const SignInUser(),
+        );
+       case userSignUpScreen:
+        return MaterialPageRoute(
+          builder: (_) => SignupUser(),
         );
        case otpScreen:
         return MaterialPageRoute(

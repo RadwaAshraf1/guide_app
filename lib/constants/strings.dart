@@ -1,5 +1,6 @@
 const adminLoginScreen = '/admin-login-screen';
 const userLoginScreen = '/user-login-screen';
+const userSignUpScreen = '/user-signup-screen';
 const splashScreen = '/splash-screen';
 const otpScreen = '/otp-screen';
 const forgetScreen = '/forget-screen';
