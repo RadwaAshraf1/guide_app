@@ -41,13 +41,13 @@ class CustomTextFormField extends StatelessWidget {
     obscureText: passwordInvisible,
       decoration: InputDecoration(
         labelText: labelText,
-        labelStyle:  const TextStyle(color: gray2,fontSize: 14),
+        labelStyle:   TextStyle(color: gray2.withOpacity(.5),fontSize: 12),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,       
-        enabledBorder:  buildBorder(gray2.withOpacity(.5)),
-        focusedBorder: buildBorder(green1),
+        enabledBorder:  buildBorder(gray2.withOpacity(.2)),
+        focusedBorder: buildBorder(green1.withOpacity(.5)),
           filled: true,
-        fillColor: gray5,
+        fillColor: gray5.withOpacity(.5),
       
 
 
@@ -61,6 +61,8 @@ class CustomTextFormField extends StatelessWidget {
 
         borderRadius: BorderRadius.circular(36),
         borderSide: BorderSide(
+          width:0 ,
+          
           color: color ?? gray1,
 
         ));
