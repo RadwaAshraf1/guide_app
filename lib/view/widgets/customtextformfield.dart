@@ -6,51 +6,46 @@ import 'package:guide/constants/colots.dart';
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
-    required this.keyboardType,
-    required this.controller,
+    // required this.keyboardType,
+    // required this.controller,
     required this.labelText,
      this.prefixIcon,
-    this.suffixIcon, this.passwordInvisible = false,
-    this.maxLines = 1, this.onSaved, 
+    this.suffixIcon, 
+    this.maxLines = 1, this.isObscureText, required this.validator, 
   });
 
- final bool passwordInvisible;
-  final TextEditingController? controller;
-  final TextInputType? keyboardType;
+ final bool ?isObscureText;
+  // final TextEditingController? controller;
+  // final TextInputType? keyboardType;
   final String? labelText;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final int maxLines;
-    // final String? Function(String?)? validator;
-  final void Function(String?)? onSaved;
+  final Function(String?) validator;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      
-       onSaved: onSaved,
-      // validator: (val) {
-      //         if (val == "") {
-      //           return "can't be empty!";
-      //         }
-      //         return null;
-      //       },
+      validator: (value) {
+        return validator(value);
+      },
       cursorHeight: 20,
       cursorColor: gray1,
-      controller: controller,
-      keyboardType: keyboardType,
-    obscureText: passwordInvisible,
+      // controller: controller,
+      // keyboardType: keyboardType,
+    obscureText: isObscureText ?? false,
       decoration: InputDecoration(
+         contentPadding:
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
         labelText: labelText,
         labelStyle:   TextStyle(color: gray2.withOpacity(.5),fontSize: 12),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,       
         enabledBorder:  buildBorder(gray2.withOpacity(.2)),
-        focusedBorder: buildBorder(green1.withOpacity(.5)),
+        focusedBorder: buildBorder(green2.withOpacity(.2)),
+        errorBorder:buildBorder(Colors.red.withOpacity(.5)),
           filled: true,
         fillColor: gray5.withOpacity(.5),
-      
-
-
       ),
       maxLines: maxLines,
     );
@@ -61,7 +56,7 @@ class CustomTextFormField extends StatelessWidget {
 
         borderRadius: BorderRadius.circular(36),
         borderSide: BorderSide(
-          width:0 ,
+          width:1.3,
           
           color: color ?? gray1,
 

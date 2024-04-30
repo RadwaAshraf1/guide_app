@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/constants/strings.dart';
+import 'package:guide/helper/app_regrex.dart';
 import 'package:guide/view/widgets/custombutton.dart';
 import 'package:guide/view/widgets/customtextformfield.dart';
 
@@ -49,8 +50,15 @@ class ForgetPasswordUser extends StatelessWidget {
 
   CustomTextFormField _buildEmailFormFIeld() {
     return CustomTextFormField(
-          keyboardType: TextInputType.emailAddress,
-          controller: email,
+       validator: (value) {
+              if (value == null ||
+                  value.isEmpty ||
+                  !AppRegex.isEmailValid(value)) {
+                return 'Please enter a valid email';
+              }
+            },
+          // keyboardType: TextInputType.emailAddress,
+          // controller: email,
           labelText: 'Email',
           prefixIcon: const Icon(
             Icons.mail,

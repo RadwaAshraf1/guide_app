@@ -6,10 +6,10 @@ import 'package:guide/view/widgets/customtextformfield.dart';
 
 
 class SetNewPasswordUser extends StatelessWidget {
-  SetNewPasswordUser({super.key});
+  const SetNewPasswordUser({super.key});
 
-  final TextEditingController password = TextEditingController();
-  final TextEditingController confirmPassword = TextEditingController();
+  // final TextEditingController password = TextEditingController();
+  // final TextEditingController confirmPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +28,14 @@ class SetNewPasswordUser extends StatelessWidget {
                 height: 30,
               ),
               CustomTextFormField(
-                passwordInvisible: true,
-                keyboardType: TextInputType.visiblePassword,
-                controller: password,
+                 validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter a valid password';
+              }
+            },
+                isObscureText: true,
+                // keyboardType: TextInputType.visiblePassword,
+                // controller: password,
                 labelText: 'Password',
                 prefixIcon: const Icon(
                   Icons.lock,
@@ -42,9 +47,14 @@ class SetNewPasswordUser extends StatelessWidget {
                 height: 20,
               ),
               CustomTextFormField(
-                passwordInvisible: true,
-                keyboardType: TextInputType.visiblePassword,
-                controller: confirmPassword,
+                   validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter a valid password';
+              }
+            },
+                isObscureText: true,
+                // keyboardType: TextInputType.visiblePassword,
+                // controller: confirmPassword,
                 labelText: 'Confirm Password',
                 prefixIcon: const Icon(
                   Icons.lock,
