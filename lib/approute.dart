@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:guide/constants/strings.dart';
+import 'package:guide/view/screens/login/ui/user_forgetpassword.dart';
+import 'package:guide/view/screens/login/ui/user_otpscreen.dart';
+import 'package:guide/view/screens/login/ui/user_resetpassword.dart';
+import 'package:guide/view/screens/login/ui/user_signin.dart';
+import 'package:guide/view/screens/login/ui/user_successpasswors.dart';
 import 'package:guide/view/screens/splashscreen.dart';
-import 'package:guide/view/screens/user_forgetpassword.dart';
-import 'package:guide/view/screens/user_otpscreen.dart';
-import 'package:guide/view/screens/user_resetpassword.dart';
-import 'package:guide/view/screens/user_signin.dart';
 import 'package:guide/view/screens/user_signup.dart';
-import 'package:guide/view/screens/user_successpasswors.dart';
 
 class AppRoute{
   Route? generateRoute(RouteSettings settings) {
