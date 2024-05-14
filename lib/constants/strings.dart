@@ -6,3 +6,4 @@ const otpScreen = '/otp-screen';
 const forgetScreen = '/forget-screen';
 const resetPasswordScreen = '/reset-password-screen';
 const successPasswordScreen = '/success-password-screen';
+const baseUrl ='http://smart-guidance-system.first-meeting.net/api/';
