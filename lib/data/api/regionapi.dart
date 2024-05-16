@@ -2,10 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:guide/constants/strings.dart';
 
 
-class RoutesApi{
+class RegionApi{
   late Dio dio;
 
-  RoutesApi() {
+  RegionApi() {
     BaseOptions options = BaseOptions(
       baseUrl: baseUrl,
       receiveDataWhenStatusError: true,
@@ -18,7 +18,7 @@ class RoutesApi{
 
   Future<List<dynamic>> fetchData() async {
     try {
-      Response response = await dio.get('routes');
+      Response response = await dio.get('region');
       print(response.data.toString());
       return response.data;
     } catch (e) {
