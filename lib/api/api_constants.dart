@@ -1,5 +1,7 @@
+
+
 class ApiConstants {
-  static const String apiBaseUrl = "http://guideme.kesug.com/api/";
+  static const String apiBaseUrl = "http://smart-guidance-system.first-meeting.net/api/";
 
   static const String login = "login";
   static const String signup = "register";

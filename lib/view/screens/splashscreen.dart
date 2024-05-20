@@ -13,37 +13,39 @@ class SplashScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Center(
-          child: Column(
-              children: [
-                const SizedBox(
-                  height: 120,
-                ),
-                Image.asset(
-                  'assets/images/logo.png',
-                  width: 150,
-                ),
-                const SizedBox(
-                  height: 80,
-                ),
-                const Text('Continue as',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold)),
-                const SizedBox(
-                  height: 15,
-                ),
-                const CustomButonAdmin(
-                  text: 'Admin',),
-               
-                const SizedBox(
-                  height: 10,
-                ),
-                 CustomButonAdmin(
-                  text: 'User',
-                  onPressed: () {
-                   Navigator.of(context).pushNamed(userLoginScreen);    
-                  },),
-              ]),
+          child: SingleChildScrollView(
+            child: Column(
+                children: [
+                  const SizedBox(
+                    height: 120,
+                  ),
+                  Image.asset(
+                    'assets/images/logo.png',
+                    width: 150,
+                  ),
+                  const SizedBox(
+                    height: 180,
+                  ),
+                  const Text('Continue as',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold)),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const CustomButonAdmin(
+                    text: 'Admin',),
+                 
+                  const SizedBox(
+                    height: 10,
+                  ),
+                   CustomButonAdmin(
+                    text: 'User',
+                    onPressed: () {
+                     Navigator.of(context).pushNamed(userLoginScreen);    
+                    },),
+                ]),
+          ),
         ),
       ),
     );

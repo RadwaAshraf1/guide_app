@@ -7,7 +7,7 @@ class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
     // required this.keyboardType,
-    // required this.controller,
+     this.controller,
     required this.labelText,
      this.prefixIcon,
     this.suffixIcon, 
@@ -15,7 +15,7 @@ class CustomTextFormField extends StatelessWidget {
   });
 
  final bool ?isObscureText;
-  // final TextEditingController? controller;
+  final TextEditingController? controller;
   // final TextInputType? keyboardType;
   final String? labelText;
   final Widget? prefixIcon;
@@ -31,7 +31,7 @@ class CustomTextFormField extends StatelessWidget {
       },
       cursorHeight: 20,
       cursorColor: gray1,
-      // controller: controller,
+      controller: controller,
       // keyboardType: keyboardType,
     obscureText: isObscureText ?? false,
       decoration: InputDecoration(
@@ -44,6 +44,7 @@ class CustomTextFormField extends StatelessWidget {
         enabledBorder:  buildBorder(gray2.withOpacity(.2)),
         focusedBorder: buildBorder(green2.withOpacity(.2)),
         errorBorder:buildBorder(Colors.red.withOpacity(.5)),
+        focusedErrorBorder:buildBorder(Colors.red.withOpacity(.5)),
           filled: true,
         fillColor: gray5.withOpacity(.5),
       ),

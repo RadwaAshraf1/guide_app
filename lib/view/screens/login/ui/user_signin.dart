@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/constants/strings.dart';
+import 'package:guide/view/screens/login/logic/login_cubit.dart';
+import 'package:guide/view/screens/login/ui/widgets/loginblocklistener.dart';
 import 'package:guide/view/widgets/custombutton.dart';
 import 'package:guide/view/widgets/customsizedbox.dart';
 
@@ -39,11 +42,13 @@ class SignInUser extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height:40,
                 ),
-                const CustomButonAdmin(
+                 CustomButonAdmin(
                     text: 'Sign in',
-                   
+                    onPressed: () {
+                        validateThenDoLogin(context);
+                      },
                     ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -61,8 +66,15 @@ class SignInUser extends StatelessWidget {
                           style: TextStyle(color: green1,fontWeight: FontWeight.bold),
                         )),
                   ],
-                )
+                ),
+                 const LoginBlocListener(),
               ]),
         ));
+  }void validateThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginStates();
+    }
   }
 }
+  
+

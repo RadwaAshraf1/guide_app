@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/helper/app_regrex.dart';
+import 'package:guide/view/screens/login/logic/login_cubit.dart';
+import 'package:guide/view/screens/login/ui/widgets/passwordvalidation.dart';
 import 'package:guide/view/widgets/customtextformfield.dart';
 
 
@@ -22,30 +25,30 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
 
   late TextEditingController passwordController;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   passwordController = context.read<LoginCubit>().passwordController;
-  //   setupPasswordControllerListener();
-  // }
+  @override
+  void initState() {
+    super.initState();
+    passwordController = context.read<LoginCubit>().passwordController;
+    setupPasswordControllerListener();
+  }
 
-  // void setupPasswordControllerListener() {
-  //   passwordController.addListener(() {
-  //     setState(() {
-  //       hasLowercase = AppRegex.hasLowerCase(passwordController.text);
-  //       hasUppercase = AppRegex.hasUpperCase(passwordController.text);
-  //       hasSpecialCharacters =
-  //           AppRegex.hasSpecialCharacter(passwordController.text);
-  //       hasNumber = AppRegex.hasNumber(passwordController.text);
-  //       hasMinLength = AppRegex.hasMinLength(passwordController.text);
-  //     });
-  //   });
-  // }
+  void setupPasswordControllerListener() {
+    passwordController.addListener(() {
+      setState(() {
+        hasLowercase = AppRegex.hasLowerCase(passwordController.text);
+        hasUppercase = AppRegex.hasUpperCase(passwordController.text);
+        hasSpecialCharacters =
+            AppRegex.hasSpecialCharacter(passwordController.text);
+        hasNumber = AppRegex.hasNumber(passwordController.text);
+        hasMinLength = AppRegex.hasMinLength(passwordController.text);
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      // key: context.read<LoginCubit>().formKey,
+      key: context.read<LoginCubit>().formKey,
       child: Column(
         children: [
           CustomTextFormField(
@@ -61,11 +64,11 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
                 return 'Please enter a valid email';
               }
             },
-            // controller: context.read<LoginCubit>().emailController,
+            controller: context.read<LoginCubit>().emailController,
           ),
-          SizedBox(height: 18),
+          const SizedBox(height: 18),
           CustomTextFormField(
-            // controller: context.read<LoginCubit>().passwordController,
+            controller: context.read<LoginCubit>().passwordController,
            labelText: 'Password',
             isObscureText: isObscureText,
             suffixIcon: GestureDetector(
@@ -89,13 +92,13 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             },
           ),
           const SizedBox(height:24),
-          // PasswordValidations(
-          //   hasLowerCase: hasLowercase,
-          //   hasUpperCase: hasUppercase,
-          //   hasSpecialCharacters: hasSpecialCharacters,
-          //   hasNumber: hasNumber,
-          //   hasMinLength: hasMinLength,
-          // ),
+          PasswordValidations(
+            hasLowerCase: hasLowercase,
+            hasUpperCase: hasUppercase,
+            hasSpecialCharacters: hasSpecialCharacters,
+            hasNumber: hasNumber,
+            hasMinLength: hasMinLength,
+          ),
         ],
       ),
     );

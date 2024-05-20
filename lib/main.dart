@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:guide/approute.dart';
 import 'package:guide/constants/strings.dart';
+import 'package:guide/di/dependency_injection.dart';
 
 late String initialRoute;
 
 void main() {
+  setupGetIt();
     runApp(
      MyApp(
       appRoute: AppRoute(),
