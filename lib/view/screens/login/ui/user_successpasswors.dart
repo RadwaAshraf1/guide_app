@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/constants/strings.dart';
+import 'package:guide/helper/spacing.dart';
 import 'package:guide/view/widgets/custombutton.dart';
 
 
@@ -15,9 +16,8 @@ class PasswordRestUser extends StatelessWidget {
         child: Column(
           children: [
            _buildIntroText(),
-            const SizedBox(
-              height: 30,
-            ),
+            
+            verticalSpace(20),
             _buildConfirmButton(context),
           ],
         ),

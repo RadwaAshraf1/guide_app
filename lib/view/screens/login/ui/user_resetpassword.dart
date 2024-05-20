@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/constants/strings.dart';
+import 'package:guide/helper/spacing.dart';
 import 'package:guide/view/widgets/custombutton.dart';
 import 'package:guide/view/widgets/customtextformfield.dart';
 
@@ -24,9 +25,7 @@ class SetNewPasswordUser extends StatelessWidget {
           child: Column(
             children: [
               __buildIntroText(),
-              const SizedBox(
-                height: 30,
-              ),
+              verticalSpace(30),
               CustomTextFormField(
                  validator: (value) {
               if (value == null || value.isEmpty) {
@@ -43,9 +42,7 @@ class SetNewPasswordUser extends StatelessWidget {
                 ),
                 suffixIcon: const Icon(Icons.visibility_off, color: gray2),
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              verticalSpace(20),
               CustomTextFormField(
                    validator: (value) {
               if (value == null || value.isEmpty) {
@@ -62,9 +59,7 @@ class SetNewPasswordUser extends StatelessWidget {
                 ),
                 suffixIcon: const Icon(Icons.visibility_off, color: gray2),
               ),
-              const SizedBox(
-                height: 30,
-              ),
+               verticalSpace(30),
               _buildConfirmButton(context)
             ],
           ),

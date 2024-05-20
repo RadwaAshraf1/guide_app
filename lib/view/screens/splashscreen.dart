@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/constants/strings.dart';
+import 'package:guide/helper/spacing.dart';
 import 'package:guide/view/widgets/custombutton.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -16,29 +17,21 @@ class SplashScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
                 children: [
-                  const SizedBox(
-                    height: 120,
-                  ),
+                  verticalSpace(120),
                   Image.asset(
                     'assets/images/logo.png',
                     width: 150,
                   ),
-                  const SizedBox(
-                    height: 180,
-                  ),
+                  verticalSpace(180),
                   const Text('Continue as',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold)),
-                  const SizedBox(
-                    height: 15,
-                  ),
+                  verticalSpace(15),
                   const CustomButonAdmin(
                     text: 'Admin',),
                  
-                  const SizedBox(
-                    height: 10,
-                  ),
+                  verticalSpace(10),
                    CustomButonAdmin(
                     text: 'User',
                     onPressed: () {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/constants/strings.dart';
+import 'package:guide/helper/spacing.dart';
 import 'package:guide/view/widgets/custombutton.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -19,13 +20,9 @@ class OtpScreen extends StatelessWidget {
           child: Column(
             children: [
               _buildIntroText(),
-              const SizedBox(
-                height: 40,
-              ),
+              verticalSpace(40),
               _buildPinVerifiedCode(context),
-              const SizedBox(
-                height: 40,
-              ),
+               verticalSpace(40),
               _buildConfirmButton(context)
             ],
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/constants/strings.dart';
+import 'package:guide/helper/spacing.dart';
 import 'package:guide/view/screens/login/logic/login_cubit.dart';
 import 'package:guide/view/screens/login/ui/widgets/loginblocklistener.dart';
 import 'package:guide/view/widgets/custombutton.dart';
@@ -24,13 +25,9 @@ class SignInUser extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: ListView(
               children: <Widget>[
-                const SizedBox(
-                  height: 30,
-                ),
+                verticalSpace(30),
                 const EmailAndPassword(),
-              const SizedBox(
-                  height: 5,
-                ),
+                 verticalSpace(5),
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).pushNamed(forgetScreen);
@@ -41,9 +38,7 @@ class SignInUser extends StatelessWidget {
                     textAlign: TextAlign.right,
                   ),
                 ),
-                const SizedBox(
-                  height:40,
-                ),
+                 verticalSpace(40),
                  CustomButonAdmin(
                     text: 'Sign in',
                     onPressed: () {

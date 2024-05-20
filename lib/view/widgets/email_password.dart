@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/helper/app_regrex.dart';
+import 'package:guide/helper/spacing.dart';
 import 'package:guide/view/screens/login/logic/login_cubit.dart';
 import 'package:guide/view/screens/login/ui/widgets/passwordvalidation.dart';
 import 'package:guide/view/widgets/customtextformfield.dart';
@@ -66,7 +67,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             },
             controller: context.read<LoginCubit>().emailController,
           ),
-          const SizedBox(height: 18),
+         verticalSpace(10),
           CustomTextFormField(
             controller: context.read<LoginCubit>().passwordController,
            labelText: 'Password',
@@ -91,7 +92,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
               }
             },
           ),
-          const SizedBox(height:24),
+          verticalSpace(24),
           PasswordValidations(
             hasLowerCase: hasLowercase,
             hasUpperCase: hasUppercase,

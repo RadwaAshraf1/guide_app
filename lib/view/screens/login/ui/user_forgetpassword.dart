@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/constants/strings.dart';
 import 'package:guide/helper/app_regrex.dart';
+import 'package:guide/helper/spacing.dart';
 import 'package:guide/view/widgets/custombutton.dart';
 import 'package:guide/view/widgets/customtextformfield.dart';
 
@@ -24,13 +25,9 @@ class ForgetPasswordUser extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildIntroText(),
-            const SizedBox(
-              height: 30,
-            ),
+            verticalSpace(40),
             _buildEmailFormFIeld(),
-            const SizedBox(
-              height: 30,
-            ),
+            verticalSpace(30),
             _buildConfirmButton(context)
           ],
         ),
