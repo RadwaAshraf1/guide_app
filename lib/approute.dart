@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:guide/btn.dart';
 import 'package:guide/constants/strings.dart';
 import 'package:guide/di/dependency_injection.dart';
 import 'package:guide/view/screens/login/logic/login_cubit.dart';
@@ -19,10 +20,10 @@ class AppRoute{
         return MaterialPageRoute(
           builder: (_) =>const SplashScreen(),
         );
-      //  case adminLoginScreen:
-      //   return MaterialPageRoute(
-      //     builder: (_) =>AdminLoginScreen(),
-      //   );
+       case exampleScreen:
+        return MaterialPageRoute(
+          builder: (_) =>const Example(),
+        );
        case userLoginScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(

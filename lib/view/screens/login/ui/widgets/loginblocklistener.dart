@@ -28,7 +28,7 @@ class LoginBlocListener extends StatelessWidget {
           },
           success: (loginResponse) {
             context.pop();
-            context.pushNamed(splashScreen);
+            context.pushNamed(exampleScreen);
           },
           error: (error) {
             setupErrorState(context, error);
