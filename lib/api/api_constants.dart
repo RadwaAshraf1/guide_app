@@ -5,6 +5,8 @@ class ApiConstants {
 
   static const String login = "login";
   static const String signup = "register";
+  static const String insertBuilding = "building";
+
 }
 
 class ApiErrors {

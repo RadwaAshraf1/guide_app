@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:guide/view/screens/building/view/addbuilding.dart';
 import 'package:guide/view/screens/splashscreen.dart';
 
 import 'package:guide/constants/colots.dart';
@@ -19,7 +20,7 @@ class _ExampleState extends State<Example> {
   //     TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
    static const List<Widget> _widgetOptions = <Widget>[
      SplashScreen(),
-     SplashScreen(),
+     AddBuilding(),
       SplashScreen(),
   ];
 
