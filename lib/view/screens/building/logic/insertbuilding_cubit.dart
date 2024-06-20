@@ -35,19 +35,20 @@ class InsertBuildingCubit extends Cubit<InsertBuildingState> {
   void emitInsertBuildingState() async {
     emit(const InsertBuildingState.loading());
     final response = await _insertBuildingRepo.insertBuilding(
-      InsertBuildingRequest(
-        address: addressController.text,
-        buidingName: buildingNameController.text,
-        description: descriptionController.text,
-        latitude: langController.text,
-        longitude: latController.text,
-        // photo: picker, 
-      ),
+       InsertBuildingRequest(
+          address: addressController.text,
+          name: buildingNameController.text,
+          latitude: latController.text,
+          longitude: langController.text,
+          description:descriptionController.text,
+          )
     );
     response.when(success: (insertBuildingResponse) {
       emit(InsertBuildingState.success(insertBuildingResponse));
-    }, failure: (error) {
+    }, 
+    failure: (error) {
       emit(InsertBuildingState.error(error: error.apiErrorModel.message ?? ''));
-    });
+    }
+    );
   }
 }

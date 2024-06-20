@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/helper/spacing.dart';
+import 'package:guide/view/screens/building/data/model/insert_building_request.dart';
 import 'package:guide/view/screens/building/logic/insertbuilding_cubit.dart';
 import 'package:guide/view/screens/building/view/widgets/buildingtextformfield.dart';
 import 'package:guide/view/screens/building/view/widgets/insertbuildingblocklistner.dart';
@@ -29,67 +30,13 @@ class AddBuilding extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            const EditImage(),
+            // const EditImage(),
             verticalSpace(20),
-          Form(
-      key: context.read<InsertBuildingCubit>().formKey,
-      child: Column(
-        children: [
-           CustomTextFormField(
-             
-              labelText: 'Building name',
-              validator:  (value) {
-              if (value == null || value.isEmpty) {
-                return 'can not be empty';
-              }
-            }, controller: context.read<InsertBuildingCubit>().buildingNameController,
-            ),
-            verticalSpace(20),
-            CustomTextFormField(
-              validator:  (value) {
-              if (value == null || value.isEmpty) {
-                return 'can not be empty';
-              }
-            },
-            
-              labelText: 'Building address',  controller:context.read<InsertBuildingCubit>().addressController,
-            ),
-            verticalSpace(20),
-            CustomTextFormField(
-              validator:  (value) {
-              if (value == null || value.isEmpty) {
-                return 'can not be empty';
-              }
-            },
-             
-              labelText: 'Longitude', controller: context.read<InsertBuildingCubit>().langController,
-            ),
-            verticalSpace(20),
-            CustomTextFormField(
-              validator:  (value) {
-              if (value == null || value.isEmpty) {
-                return 'can not be empty';
-              }
-            },
-              
-              labelText: 'Latitude',controller: context.read<InsertBuildingCubit>().latController,
-            ),
-            CustomTextFormField(
-              validator:  (value) {
-              if (value == null || value.isEmpty) {
-                return 'can not be empty';
-              }
-            },
-              
-              labelText: 'Building description',controller: context.read<InsertBuildingCubit>().descriptionController,
-            ),
-        ],
-      ),
-    ),
+         BuildingTextFormField(),
            verticalSpace(30),
             NextButton(
             onPressed: () {
-              
+              validate(context);
             },
            ),
            const InsertBuildingBlocListener(),
@@ -104,3 +51,4 @@ class AddBuilding extends StatelessWidget {
     }
   }
 }
+

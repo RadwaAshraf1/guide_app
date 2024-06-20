@@ -25,19 +25,17 @@ Map<String, dynamic> _$InsertBuildingResponseToJson(
     };
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
-      buidingName: json['buidingName'] as String,
+      buildingName: json['buiding name'] as String,
       address: json['address'] as String,
       longitude: json['longitude'] as String,
       description: json['description'] as String,
       latitude: json['latitude'] as String,
-      photo: json['photo'] as dynamic,
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
-      'buidingName': instance.buidingName,
+      'buiding name': instance.buildingName,
       'address': instance.address,
       'longitude': instance.longitude,
       'description': instance.description,
       'latitude': instance.latitude,
-      'photo': instance.photo,
     };

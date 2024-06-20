@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:guide/home.dart';
 import 'package:guide/view/screens/building/view/addbuilding.dart';
 import 'package:guide/view/screens/splashscreen.dart';
-
+import 'package:guide/view/screens/login/ui/user_signin.dart';
 import 'package:guide/constants/colots.dart';
 
 
@@ -19,8 +20,8 @@ class _ExampleState extends State<Example> {
   // static const TextStyle optionStyle =
   //     TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
    static const List<Widget> _widgetOptions = <Widget>[
+     HomeAdmin(),
      SplashScreen(),
-     AddBuilding(),
       SplashScreen(),
   ];
 

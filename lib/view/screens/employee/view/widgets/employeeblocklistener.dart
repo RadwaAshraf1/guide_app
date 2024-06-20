@@ -3,15 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/constants/strings.dart';
 import 'package:guide/helper/extintion.dart';
-import 'package:guide/view/screens/building/logic/insertbuilding_cubit.dart';
-import 'package:guide/view/screens/building/logic/insertbuilding_state.dart';
+import 'package:guide/view/screens/employee/logic/employee_cubit.dart';
+import 'package:guide/view/screens/employee/logic/employee_state.dart';
 
-class InsertBuildingBlocListener extends StatelessWidget {
-  const InsertBuildingBlocListener({super.key});
+class EmployeeBlockListener extends StatelessWidget {
+  const EmployeeBlockListener({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<InsertBuildingCubit, InsertBuildingState>(
+    return BlocListener<EmployeeCubit, EmployeeState>(
       listenWhen: (previous, current) =>
           current is Loading || current is Success || current is Error,
       listener: (context, state) {

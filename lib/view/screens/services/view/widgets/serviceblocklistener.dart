@@ -3,17 +3,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/constants/strings.dart';
 import 'package:guide/helper/extintion.dart';
-import 'package:guide/view/screens/building/logic/insertbuilding_cubit.dart';
-import 'package:guide/view/screens/building/logic/insertbuilding_state.dart';
+import 'package:guide/view/screens/services/logic/service_cubit.dart';
+import 'package:guide/view/screens/services/logic/service_state.dart';
 
-class InsertBuildingBlocListener extends StatelessWidget {
-  const InsertBuildingBlocListener({super.key});
+class ServiceBlocListener extends StatelessWidget {
+  const ServiceBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<InsertBuildingCubit, InsertBuildingState>(
+    return BlocListener<ServiceCubit, ServiceState>(
       listenWhen: (previous, current) =>
-          current is Loading || current is Success || current is Error,
+          current is ServiceLoading || current is ServiceSuccess || current is ServiceError,
       listener: (context, state) {
         state.whenOrNull(
           loading: () {
@@ -26,7 +26,7 @@ class InsertBuildingBlocListener extends StatelessWidget {
               ),
             );
           },
-          success: (insertBuildingResponse) {
+          success: (insertServiceResponse) {
             context.pop();
             context.pushNamed(splashScreen);
           },

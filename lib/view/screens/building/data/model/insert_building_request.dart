@@ -3,7 +3,8 @@ part 'insert_building_request.g.dart';
 
 @JsonSerializable()
 class InsertBuildingRequest {
-  final String buidingName;
+  //  @JsonKey(name: 'buiding name')
+  final String name;
  final String address;
   final String longitude;
   final String description;
@@ -11,7 +12,7 @@ class InsertBuildingRequest {
   // final dynamic photo;
 
   InsertBuildingRequest({
-     required this.buidingName,
+     required this.name,
      required this.address,
      required this.longitude,
      required this.description,

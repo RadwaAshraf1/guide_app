@@ -5,12 +5,18 @@ import 'package:guide/constants/strings.dart';
 import 'package:guide/di/dependency_injection.dart';
 import 'package:guide/view/screens/building/logic/insertbuilding_cubit.dart';
 import 'package:guide/view/screens/building/view/addbuilding.dart';
+import 'package:guide/view/screens/employee/logic/employee_cubit.dart';
+import 'package:guide/view/screens/employee/view/addemployee.dart';
+import 'package:guide/view/screens/employee/view/employee.dart';
 import 'package:guide/view/screens/login/logic/login_cubit.dart';
 import 'package:guide/view/screens/login/ui/user_forgetpassword.dart';
 import 'package:guide/view/screens/login/ui/user_otpscreen.dart';
 import 'package:guide/view/screens/login/ui/user_resetpassword.dart';
 import 'package:guide/view/screens/login/ui/user_signin.dart';
 import 'package:guide/view/screens/login/ui/user_successpasswors.dart';
+import 'package:guide/view/screens/services/logic/service_cubit.dart';
+import 'package:guide/view/screens/services/view/addservice.dart';
+import 'package:guide/view/screens/services/view/services.dart';
 import 'package:guide/view/screens/signup/logic/sign_up_cubit.dart';
 import 'package:guide/view/screens/splashscreen.dart';
 import 'package:guide/view/screens/signup/ui/user_signup.dart';
@@ -45,6 +51,28 @@ class AppRoute {
             create: (context) => getIt<InsertBuildingCubit>(),
             child: const AddBuilding(),
           ),
+        );
+      case serviceScreen:
+        return MaterialPageRoute(
+          builder: (_) => const Services(),
+        );
+      case addServiceScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<ServiceCubit>(),
+            child: const AddServices(),
+          ),
+        );
+      case addEmployeeScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<EmployeeCubit>(),
+            child: const AddEmployee(),
+          ),
+        );
+        case employeeScreen:
+        return MaterialPageRoute(
+          builder: (_) => const Employee(),
         );
       case otpScreen:
         return MaterialPageRoute(

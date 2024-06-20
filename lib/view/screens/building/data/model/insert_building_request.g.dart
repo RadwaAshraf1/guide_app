@@ -9,7 +9,7 @@ part of 'insert_building_request.dart';
 InsertBuildingRequest _$InsertBuildingRequestFromJson(
         Map<String, dynamic> json) =>
     InsertBuildingRequest(
-      buidingName: json['buidingName'] as String,
+      name: json['name'] as String,
       address: json['address'] as String,
       longitude: json['longitude'] as String,
       description: json['description'] as String,
@@ -19,7 +19,7 @@ InsertBuildingRequest _$InsertBuildingRequestFromJson(
 Map<String, dynamic> _$InsertBuildingRequestToJson(
         InsertBuildingRequest instance) =>
     <String, dynamic>{
-      'buidingName': instance.buidingName,
+      'name': instance.name,
       'address': instance.address,
       'longitude': instance.longitude,
       'description': instance.description,

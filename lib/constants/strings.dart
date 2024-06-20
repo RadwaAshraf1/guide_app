@@ -8,5 +8,9 @@ const resetPasswordScreen = '/reset-password-screen';
 const successPasswordScreen = '/success-password-screen';
 const exampleScreen = '/exmple-screen';
 const addBuildingScreen = '/add-building-screen';
+const serviceScreen = '/service-screen';
+const addServiceScreen = '/add-service-screen';
+const addEmployeeScreen = '/add-employee-screen';
+const employeeScreen = '/employee-screen';
 
 // const baseUrl ='http://smart-guidance-system.first-meeting.net/api/';
