@@ -6,6 +6,9 @@ import 'package:guide/view/screens/employee/data/models/employeerequest.dart';
 import 'package:guide/view/screens/employee/data/models/employeeresponse.dart';
 import 'package:guide/view/screens/login/data/model/login_request_body.dart';
 import 'package:guide/view/screens/login/data/model/login_response.dart';
+import 'package:guide/view/screens/place/data/apis/place_api_constance.dart';
+import 'package:guide/view/screens/place/data/models/placerequestbody.dart';
+import 'package:guide/view/screens/place/data/models/placeresponse.dart';
 import 'package:guide/view/screens/services/data/models/servicesrequest.dart';
 import 'package:guide/view/screens/services/data/models/servicesresponse.dart';
 import 'package:guide/view/screens/signup/data/models/sign_up_request_body.dart';
@@ -41,9 +44,9 @@ abstract class ApiService {
     @Body() EmployeeRequest insertEmployeeRequest,
   );
 
-  // @POST(ApiConstants.insertPlace)
-  // Future<PlacesRequest> placeRequest(
-  //   @Body() PlacesRequest placesRequest,
-  // );
+  @POST(PlaceApiConstant.insertPlace)
+  Future<PlaceResponse> insertPlace(
+    @Body() PlacesRequest placesRequest,
+  );
   
 }

@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Smart Guide',
         onGenerateRoute: appRoute.generateRoute,
-        initialRoute: splashScreen,
+        initialRoute:exampleScreen ,
       ),
     );
   }

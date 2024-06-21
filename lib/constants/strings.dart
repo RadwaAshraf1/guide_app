@@ -12,5 +12,6 @@ const serviceScreen = '/service-screen';
 const addServiceScreen = '/add-service-screen';
 const addEmployeeScreen = '/add-employee-screen';
 const employeeScreen = '/employee-screen';
+const placeScreen = '/place-screen';
 
 // const baseUrl ='http://smart-guidance-system.first-meeting.net/api/';

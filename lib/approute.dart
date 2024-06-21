@@ -14,6 +14,8 @@ import 'package:guide/view/screens/login/ui/user_otpscreen.dart';
 import 'package:guide/view/screens/login/ui/user_resetpassword.dart';
 import 'package:guide/view/screens/login/ui/user_signin.dart';
 import 'package:guide/view/screens/login/ui/user_successpasswors.dart';
+import 'package:guide/view/screens/place/logic/place_cubit.dart';
+import 'package:guide/view/screens/place/view/place.dart';
 import 'package:guide/view/screens/services/logic/service_cubit.dart';
 import 'package:guide/view/screens/services/view/addservice.dart';
 import 'package:guide/view/screens/services/view/services.dart';
@@ -73,6 +75,13 @@ class AppRoute {
         case employeeScreen:
         return MaterialPageRoute(
           builder: (_) => const Employee(),
+        );
+        case placeScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<PlaceCubit>(),
+            child: const AddPlace(),
+          ),
         );
       case otpScreen:
         return MaterialPageRoute(

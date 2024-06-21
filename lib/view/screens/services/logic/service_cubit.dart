@@ -13,8 +13,7 @@ class ServiceCubit extends Cubit<ServiceState> {
   TextEditingController nameController = TextEditingController();
   TextEditingController placeId = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
-  // TextEditingController passwordConfirmationController =
-  //     TextEditingController();
+ 
   final formKey = GlobalKey<FormState>();
 
   void emitServiceStates() async {

@@ -3,33 +3,32 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/constants/strings.dart';
 import 'package:guide/helper/extintion.dart';
-import 'package:guide/view/screens/employee/logic/employee_cubit.dart';
-import 'package:guide/view/screens/employee/logic/employee_state.dart';
+import 'package:guide/view/screens/place/logic/place_cubit.dart';
+import 'package:guide/view/screens/place/logic/place_state.dart';
 
-class EmployeeBlockListener extends StatelessWidget {
-  const EmployeeBlockListener({super.key});
+class PlaceBlockListner extends StatelessWidget {
+  const PlaceBlockListner({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<EmployeeCubit, EmployeeState>(
+    return BlocListener<PlaceCubit, PlaceState>(
       listenWhen: (previous, current) =>
           current is Loading || current is Success || current is Error,
       listener: (context, state) {
         state.whenOrNull(
-          loading: () {
-            showDialog(
-              context: context,
-              builder: (context) => const Center(
-                child: CircularProgressIndicator(
-                  color: green2
-                ),
-              ),
-            );
-          },
-          success: (insertBuildingResponse) {
+          // loading: () {
+          //   showDialog(
+          //     context: context,
+          //     builder: (context) => const Center(
+          //       child: CircularProgressIndicator(
+          //         color: green2R
+          //       ),
+          //     ),
+          //   );
+          // },
+          success: (insertPlaseResponse) {
             context.pop();
             context.pushNamed(splashScreen);
-            
           },
           
          

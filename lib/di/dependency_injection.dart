@@ -8,6 +8,8 @@ import 'package:guide/view/screens/employee/data/repo/employeerepo.dart';
 import 'package:guide/view/screens/employee/logic/employee_cubit.dart';
 import 'package:guide/view/screens/login/data/repo/loginrepo.dart';
 import 'package:guide/view/screens/login/logic/login_cubit.dart';
+import 'package:guide/view/screens/place/data/repo/placerepo.dart';
+import 'package:guide/view/screens/place/logic/place_cubit.dart';
 import 'package:guide/view/screens/services/data/repo/servicerepo.dart';
 import 'package:guide/view/screens/services/logic/service_cubit.dart';
 import 'package:guide/view/screens/signup/data/repos/sign_up_repo.dart';
@@ -39,6 +41,9 @@ Future<void> setupGetIt() async {
  //insert employee
   getIt.registerLazySingleton<EmployeeRepo>(() => EmployeeRepo(getIt()));
   getIt.registerFactory<EmployeeCubit>(() => EmployeeCubit(getIt()));
+
+  getIt.registerLazySingleton<PlaceRepo>(() => PlaceRepo(getIt()));
+  getIt.registerFactory<PlaceCubit>(() => PlaceCubit(getIt()));
 
 
 }
