@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:guide/api/api_constants.dart';
+import 'package:guide/view/screens/building/data/model/getonebuilding.dart';
 import 'package:guide/view/screens/building/data/model/insert_building_request.dart';
 import 'package:guide/view/screens/building/data/model/insert_building_response.dart';
 import 'package:guide/view/screens/employee/data/models/employeerequest.dart';
@@ -7,8 +8,13 @@ import 'package:guide/view/screens/employee/data/models/employeeresponse.dart';
 import 'package:guide/view/screens/login/data/model/login_request_body.dart';
 import 'package:guide/view/screens/login/data/model/login_response.dart';
 import 'package:guide/view/screens/place/data/apis/place_api_constance.dart';
+import 'package:guide/view/screens/place/data/models/getplace.dart';
 import 'package:guide/view/screens/place/data/models/placerequestbody.dart';
 import 'package:guide/view/screens/place/data/models/placeresponse.dart';
+import 'package:guide/view/screens/region/data/models/regionrequest.dart';
+import 'package:guide/view/screens/region/data/models/regionresponse.dart';
+import 'package:guide/view/screens/routes/data/models/routerequest.dart';
+import 'package:guide/view/screens/routes/data/models/routeresponse.dart';
 import 'package:guide/view/screens/services/data/models/servicesrequest.dart';
 import 'package:guide/view/screens/services/data/models/servicesresponse.dart';
 import 'package:guide/view/screens/signup/data/models/sign_up_request_body.dart';
@@ -48,5 +54,19 @@ abstract class ApiService {
   Future<PlaceResponse> insertPlace(
     @Body() PlacesRequest placesRequest,
   );
+  @POST(ApiConstants.insertRoute)
+  Future<RouteResponse> insertRoute(
+    @Body() RouteRequest routeRequest,
+  );
+  @POST(ApiConstants.insertRegion)
+  Future<RegionResponse> insertRegion(
+    @Body() RegionRequest regionRequest,
+  );
+
+  @GET(ApiConstants.oneBuilding)
+  Future<OneBuildingModel> getOneBuilding();
+
+  @GET(PlaceApiConstant.getPlace)
+  Future<GetPlaces> getPlace();
   
 }

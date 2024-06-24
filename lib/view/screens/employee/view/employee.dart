@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/constants/strings.dart';
+import 'package:guide/helper/spacing.dart';
 import 'package:guide/view/widgets/customappbar.dart';
 import 'package:guide/view/widgets/nextbutton.dart';
 
@@ -19,7 +20,7 @@ class Employee extends StatelessWidget {
       body: Padding(padding: const EdgeInsets.all(16),
       child: Column(
         children: [
-            const SizedBox(height: 10,),
+             verticalSpace(10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

@@ -22,7 +22,7 @@ class HomeAdmin extends StatelessWidget {
           backgroundColor: green3,
           child: IconButton(
             onPressed: () {
-               Navigator.of(context).pushNamed(addBuildingScreen);
+               Navigator.of(context).pushNamed(oneBuildingScreen);
             },
             icon: const Icon(Icons.add),
             color: white,

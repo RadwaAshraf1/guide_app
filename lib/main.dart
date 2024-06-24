@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:guide/approute.dart';
 import 'package:guide/constants/strings.dart';
+import 'package:guide/onebuilding/onebuilding_screen.dart';
 import 'package:guide/di/dependency_injection.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Smart Guide',
+        // home: OneBuildingScreen2(),
         onGenerateRoute: appRoute.generateRoute,
         initialRoute:exampleScreen ,
       ),
