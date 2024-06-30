@@ -9,5 +9,5 @@ const gray1 = Color(0xFF686767);
 const gray2 = Color(0xFFA7A5A5);
 const gray3 = Color(0xFFD2D0D0);
 const gray5 = Color(0xFFF0ECEC);
-final  gray4 = Colors.grey[300];
+final gray4 = Colors.grey[300];
 const white = Colors.white;

@@ -20,10 +20,14 @@ class LoginCubit extends Cubit<LoginState> {
         password: passwordController.text,
       ),
     );
-    response.when(success: (loginResponse) {
+    response.when(success: (loginResponse) async{
+      // await saveUserToken(a.?.token ?? '');
       emit(LoginState.success(loginResponse));
     }, failure: (error) {
       emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
     });
   }
+  //   Future<void> saveUserToken(String token) async {
+  //   await SharedPrefHelper.setData(SharedPrefKeys.userToken, token);
+  // }
 }

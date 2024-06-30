@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:guide/constants/colots.dart';
 
 
-class CustomButonAdmin extends StatelessWidget {
-  const CustomButonAdmin({super.key, required this.text, this.onPressed});
+class CustomButon extends StatelessWidget {
+  const CustomButon({super.key, required this.text, this.onPressed});
   final String text;
   final void Function()? onPressed;
 

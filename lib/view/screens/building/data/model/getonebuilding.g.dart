@@ -8,7 +8,9 @@ part of 'getonebuilding.dart';
 
 OneBuildingModel _$OneBuildingModelFromJson(Map<String, dynamic> json) =>
     OneBuildingModel(
-      data: Data.fromJson(json['data'] as Map<String, dynamic>),
+      data: json['data'] == null
+          ? null
+          : Data.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$OneBuildingModelToJson(OneBuildingModel instance) =>
@@ -17,12 +19,12 @@ Map<String, dynamic> _$OneBuildingModelToJson(OneBuildingModel instance) =>
     };
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
-      buidingName: json['buiding name'] as String,
-      address: json['address'] as String,
-      longitude: json['longitude'] as String,
-      description: json['description'] as String,
-      latitude: json['latitude'] as String,
-      photo: json['photo'] as String,
+      buidingName: json['buiding name'] as String?,
+      address: json['address'] as String?,
+      longitude: json['longitude'] as String?,
+      description: json['description'] as String?,
+      latitude: json['latitude'] as String?,
+      photo: json['photo'] as String?,
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{

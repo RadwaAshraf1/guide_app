@@ -35,8 +35,8 @@ class ForgetPasswordUser extends StatelessWidget {
       ));
   }
 
-  CustomButonAdmin _buildConfirmButton(BuildContext context) {
-    return CustomButonAdmin(
+  CustomButon _buildConfirmButton(BuildContext context) {
+    return CustomButon(
           text: 'Confirm',
           onPressed: () {
             Navigator.of(context).pushNamed(otpScreen);

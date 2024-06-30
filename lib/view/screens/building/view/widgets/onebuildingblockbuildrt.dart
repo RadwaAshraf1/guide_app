@@ -23,7 +23,7 @@ class OneBuildingBlockBuilder extends StatelessWidget {
             );
           },
           success: (oneBuildingData) {
-            var oneBuildingDatalist = oneBuildingData?.data;
+            var oneBuildingDatalist = oneBuildingData.data;
             return Column(
               
               children: [
@@ -33,7 +33,7 @@ class OneBuildingBlockBuilder extends StatelessWidget {
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(100),
                       child: Image.asset(
-                     'assets/images/logo.png',
+                     '',
                       ))),
               verticalSpace(50),
               Padding(
@@ -61,19 +61,7 @@ class OneBuildingBlockBuilder extends StatelessWidget {
                   ],
                 ),
               ),
-              // verticalSpace(10),
-            //  Column(
-            //    crossAxisAlignment: CrossAxisAlignment.start,
-            //    children: [
-            //      const Text('Building Address',
-            //       style: TextStyle(color: green1),
-            //       textAlign: TextAlign.start,
-            //      ),
-            //      verticalSpace(10),
-            //      Text(
-            //    oneBuildingDatalist.address.toString(),)
-            //    ],
-            //  ),
+            
             ]);
           },
           error: (error) {

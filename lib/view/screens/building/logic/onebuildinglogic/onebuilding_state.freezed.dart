@@ -20,7 +20,7 @@ mixin _$OneBuildingState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(OneBuildingModel? dataOneBuilding) success,
+    required TResult Function(OneBuildingModel dataOneBuilding) success,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$OneBuildingState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(OneBuildingModel? dataOneBuilding)? success,
+    TResult? Function(OneBuildingModel dataOneBuilding)? success,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$OneBuildingState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(OneBuildingModel? dataOneBuilding)? success,
+    TResult Function(OneBuildingModel dataOneBuilding)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -126,7 +126,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(OneBuildingModel? dataOneBuilding) success,
+    required TResult Function(OneBuildingModel dataOneBuilding) success,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -137,7 +137,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(OneBuildingModel? dataOneBuilding)? success,
+    TResult? Function(OneBuildingModel dataOneBuilding)? success,
     TResult? Function(String error)? error,
   }) {
     return initial?.call();
@@ -148,7 +148,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(OneBuildingModel? dataOneBuilding)? success,
+    TResult Function(OneBuildingModel dataOneBuilding)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -240,7 +240,7 @@ class _$LoadingImpl implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(OneBuildingModel? dataOneBuilding) success,
+    required TResult Function(OneBuildingModel dataOneBuilding) success,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -251,7 +251,7 @@ class _$LoadingImpl implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(OneBuildingModel? dataOneBuilding)? success,
+    TResult? Function(OneBuildingModel dataOneBuilding)? success,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -262,7 +262,7 @@ class _$LoadingImpl implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(OneBuildingModel? dataOneBuilding)? success,
+    TResult Function(OneBuildingModel dataOneBuilding)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -320,7 +320,7 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({OneBuildingModel? dataOneBuilding});
+  $Res call({OneBuildingModel dataOneBuilding});
 }
 
 /// @nodoc
@@ -334,13 +334,13 @@ class __$$SuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? dataOneBuilding = freezed,
+    Object? dataOneBuilding = null,
   }) {
     return _then(_$SuccessImpl(
-      freezed == dataOneBuilding
+      null == dataOneBuilding
           ? _value.dataOneBuilding
           : dataOneBuilding // ignore: cast_nullable_to_non_nullable
-              as OneBuildingModel?,
+              as OneBuildingModel,
     ));
   }
 }
@@ -351,7 +351,7 @@ class _$SuccessImpl implements Success {
   const _$SuccessImpl(this.dataOneBuilding);
 
   @override
-  final OneBuildingModel? dataOneBuilding;
+  final OneBuildingModel dataOneBuilding;
 
   @override
   String toString() {
@@ -381,7 +381,7 @@ class _$SuccessImpl implements Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(OneBuildingModel? dataOneBuilding) success,
+    required TResult Function(OneBuildingModel dataOneBuilding) success,
     required TResult Function(String error) error,
   }) {
     return success(dataOneBuilding);
@@ -392,7 +392,7 @@ class _$SuccessImpl implements Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(OneBuildingModel? dataOneBuilding)? success,
+    TResult? Function(OneBuildingModel dataOneBuilding)? success,
     TResult? Function(String error)? error,
   }) {
     return success?.call(dataOneBuilding);
@@ -403,7 +403,7 @@ class _$SuccessImpl implements Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(OneBuildingModel? dataOneBuilding)? success,
+    TResult Function(OneBuildingModel dataOneBuilding)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -452,10 +452,9 @@ class _$SuccessImpl implements Success {
 }
 
 abstract class Success implements OneBuildingState {
-  const factory Success(final OneBuildingModel? dataOneBuilding) =
-      _$SuccessImpl;
+  const factory Success(final OneBuildingModel dataOneBuilding) = _$SuccessImpl;
 
-  OneBuildingModel? get dataOneBuilding;
+  OneBuildingModel get dataOneBuilding;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -527,7 +526,7 @@ class _$ErrorImpl implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(OneBuildingModel? dataOneBuilding) success,
+    required TResult Function(OneBuildingModel dataOneBuilding) success,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -538,7 +537,7 @@ class _$ErrorImpl implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(OneBuildingModel? dataOneBuilding)? success,
+    TResult? Function(OneBuildingModel dataOneBuilding)? success,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -549,7 +548,7 @@ class _$ErrorImpl implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(OneBuildingModel? dataOneBuilding)? success,
+    TResult Function(OneBuildingModel dataOneBuilding)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {

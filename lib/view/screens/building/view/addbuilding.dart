@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guide/constants/colots.dart';
 import 'package:guide/helper/spacing.dart';
-import 'package:guide/view/screens/building/data/model/insert_building_request.dart';
 import 'package:guide/view/screens/building/logic/insertbuilding_cubit.dart';
 import 'package:guide/view/screens/building/view/widgets/buildingtextformfield.dart';
 import 'package:guide/view/screens/building/view/widgets/insertbuildingblocklistner.dart';
 import 'package:guide/view/widgets/customappbar.dart';
-import 'package:guide/view/widgets/customtextformfield.dart';
 import 'package:guide/view/widgets/editeimage.dart';
 import 'package:guide/view/widgets/nextbutton.dart';
 
@@ -30,7 +28,7 @@ class AddBuilding extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            // const EditImage(),
+            const EditImage(),
             verticalSpace(20),
          BuildingTextFormField(),
            verticalSpace(30),

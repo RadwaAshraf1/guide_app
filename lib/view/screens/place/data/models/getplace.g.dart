@@ -7,8 +7,8 @@ part of 'getplace.dart';
 // **************************************************************************
 
 GetPlaces _$GetPlacesFromJson(Map<String, dynamic> json) => GetPlaces(
-      places: (json['places'] as List<dynamic>)
-          .map((e) => Places.fromJson(e as Map<String, dynamic>))
+      places: (json['places'] as List<dynamic>?)
+          ?.map((e) => Places.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -18,7 +18,7 @@ Map<String, dynamic> _$GetPlacesToJson(GetPlaces instance) => <String, dynamic>{
 
 Places _$PlacesFromJson(Map<String, dynamic> json) => Places(
       placeId: (json['placeId'] as num?)?.toInt(),
-      placeName: json['placeName'] as String?,
+      placeName: json['place name'] as String?,
       regionId: (json['regionId'] as num?)?.toInt(),
       guideWord: json['guideWord'] as String?,
       xCoordinate: (json['xCoordinate'] as num?)?.toInt(),
@@ -28,7 +28,7 @@ Places _$PlacesFromJson(Map<String, dynamic> json) => Places(
 
 Map<String, dynamic> _$PlacesToJson(Places instance) => <String, dynamic>{
       'placeId': instance.placeId,
-      'placeName': instance.placeName,
+      'place name': instance.placeName,
       'regionId': instance.regionId,
       'guideWord': instance.guideWord,
       'xCoordinate': instance.xCoordinate,

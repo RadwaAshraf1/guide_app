@@ -27,7 +27,7 @@ class AddEmployee extends StatelessWidget {
             verticalSpace(10),
             const EmployeeForm(),
             verticalSpace(40),
-            CustomButonAdmin(
+            CustomButon(
               text: 'Add',
               onPressed: () {
                 validate(context);

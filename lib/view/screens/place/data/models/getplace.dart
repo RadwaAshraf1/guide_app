@@ -4,7 +4,7 @@ part 'getplace.g.dart';
 @JsonSerializable()
 class GetPlaces{
 
-  final List<Places> places;
+  final List<Places>? places;
 
   GetPlaces({required this.places});
 
@@ -16,6 +16,7 @@ factory GetPlaces.fromJson(Map<String, dynamic> json) =>
 @JsonSerializable()
 class Places {
   int? placeId;
+  @JsonKey(name: 'place name')
   String? placeName;
   int? regionId;
   String? guideWord;

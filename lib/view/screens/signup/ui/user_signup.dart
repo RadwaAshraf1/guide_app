@@ -4,10 +4,10 @@ import 'package:guide/constants/colots.dart';
 import 'package:guide/constants/strings.dart';
 import 'package:guide/helper/spacing.dart';
 import 'package:guide/view/screens/signup/logic/sign_up_cubit.dart';
-import 'package:guide/view/screens/signup/ui/widget/signup_blocklistener.dart';
+import 'package:guide/view/screens/signup/ui/signupform.dart';
+import 'package:guide/view/screens/signup/ui/widget/user_signupblockbuilder.dart';
 import 'package:guide/view/widgets/custombutton.dart';
 import 'package:guide/view/widgets/customsizedbox.dart';
-import 'package:guide/view/screens/signup/ui/widget/signupform.dart';
 
 // ignore: must_be_immutable
 class SignupUser extends StatelessWidget {
@@ -27,7 +27,7 @@ class SignupUser extends StatelessWidget {
             verticalSpace(30),
             const SignupForm(),
             verticalSpace(20),
-            CustomButonAdmin(
+            CustomButon(
               text: 'Sign up',
               onPressed: () {
                 validateThenDoSignup(context);
@@ -51,7 +51,7 @@ class SignupUser extends StatelessWidget {
                     )),
               ],
             ),
-            const SignupBlocListener(),
+            const UserSignupBlocListener(),
           ]),
         ));
   }

@@ -22,7 +22,7 @@ class InsertRoute extends StatelessWidget {
               verticalSpace(20),
               const RouteForm(),
             verticalSpace(20),
-             CustomButonAdmin(text: 'Insert Information',
+             CustomButon(text: 'Insert Information',
             onPressed: () {
               validate(context);
             },),

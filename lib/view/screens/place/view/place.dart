@@ -26,7 +26,7 @@ class AddPlace extends StatelessWidget {
             verticalSpace(20),
             const PlaceForm(),
             verticalSpace(100),
-            CustomButonAdmin(
+            CustomButon(
               text: 'Add',
               onPressed: () {
                 validate(context);}

@@ -25,8 +25,8 @@ class PasswordRestUser extends StatelessWidget {
     );
   }
 
-  CustomButonAdmin _buildConfirmButton(BuildContext context) {
-    return CustomButonAdmin(
+  CustomButon _buildConfirmButton(BuildContext context) {
+    return CustomButon(
             text: 'Continue',
             onPressed: () {
               Navigator.of(context).pushNamed(userLoginScreen);

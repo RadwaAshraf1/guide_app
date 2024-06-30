@@ -1,4 +1,5 @@
 const adminLoginScreen = '/admin-login-screen';
+const adminSignUpScreen = '/admin-signup-screen';
 const userLoginScreen = '/user-login-screen';
 const userSignUpScreen = '/user-signup-screen';
 const splashScreen = '/splash-screen';
@@ -9,6 +10,7 @@ const successPasswordScreen = '/success-password-screen';
 const exampleScreen = '/exmple-screen';
 const addBuildingScreen = '/add-building-screen';
 const serviceScreen = '/service-screen';
+const detailsServiceScreen = '/details-service-screen';
 const addServiceScreen = '/add-service-screen';
 const addEmployeeScreen = '/add-employee-screen';
 const employeeScreen = '/employee-screen';
@@ -16,6 +18,11 @@ const placeScreen = '/place-screen';
 const getPlaceScreen = '/get-place-screen';
 const routeScreen = '/route-screen';
 const regionScreen = '/region-screen';
+const getRegionScreen = '/region-screen';
 const oneBuildingScreen = '/one-building-screen';
+const qrScreen = '/qrScreen-screen';
+const allServicesScreen = '/allServices-Screen-screen';
+const getProfileScreen = '/getprofile-Screen-screen';
+const updateProfileScreen = '/updateprofile-Screen-screen';
 
 // const baseUrl ='http://smart-guidance-system.first-meeting.net/api/';

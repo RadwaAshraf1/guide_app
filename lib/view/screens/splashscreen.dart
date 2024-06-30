@@ -28,14 +28,17 @@ class SplashScreen extends StatelessWidget {
                           fontSize: 20,
                           fontWeight: FontWeight.bold)),
                   verticalSpace(15),
-                  const CustomButonAdmin(
-                    text: 'Admin',),
+                   CustomButon(
+                    text: 'User',
+                     onPressed: () {
+                     Navigator.of(context).pushNamed(userLoginScreen);    
+                    },),
                  
                   verticalSpace(10),
-                   CustomButonAdmin(
-                    text: 'User',
+                   CustomButon(
+                    text: 'Admin',
                     onPressed: () {
-                     Navigator.of(context).pushNamed(userLoginScreen);    
+                     Navigator.of(context).pushNamed(adminLoginScreen);    
                     },),
                 ]),
           ),

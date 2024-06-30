@@ -2,6 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:guide/api/api_services.dart';
 import 'package:guide/api/dio_factory.dart';
+import 'package:guide/user/profile/data/repo/getprofileuserrepo.dart';
+import 'package:guide/user/profile/data/repo/updateprofilerepo.dart';
+import 'package:guide/user/profile/logic/updateprofile_cubit.dart';
 import 'package:guide/view/screens/building/data/repo/insertbuildingrepo.dart';
 import 'package:guide/view/screens/building/data/repo/onebuilding.dart';
 import 'package:guide/view/screens/building/logic/insertbuilding_cubit.dart';
@@ -14,10 +17,12 @@ import 'package:guide/view/screens/place/data/repo/getplacerepo.dart';
 import 'package:guide/view/screens/place/data/repo/placerepo.dart';
 import 'package:guide/view/screens/place/logic/getplaces_cubit.dart';
 import 'package:guide/view/screens/place/logic/place_cubit.dart';
+import 'package:guide/view/screens/region/data/repo/getregionrepo.dart';
 import 'package:guide/view/screens/region/data/repo/regionrepo.dart';
 import 'package:guide/view/screens/region/logic/region_cubit.dart';
 import 'package:guide/view/screens/routes/data/repo/routerepo.dart';
 import 'package:guide/view/screens/routes/logic/route_cubit.dart';
+import 'package:guide/view/screens/services/data/repo/allservicesrepo.dart';
 import 'package:guide/view/screens/services/data/repo/servicerepo.dart';
 import 'package:guide/view/screens/services/logic/service_cubit.dart';
 import 'package:guide/view/screens/signup/data/repos/sign_up_repo.dart';
@@ -46,6 +51,10 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<ServiceRepo>(() => ServiceRepo(getIt()));
   getIt.registerFactory<ServiceCubit>(() => ServiceCubit(getIt()));
  
+
+  getIt.registerLazySingleton<UpdateProfileRepoRepo>(() => UpdateProfileRepoRepo(getIt()));
+  getIt.registerFactory<UpdateProfileCubit>(() => UpdateProfileCubit(getIt()));
+ 
  //insert employee
   getIt.registerLazySingleton<EmployeeRepo>(() => EmployeeRepo(getIt()));
   getIt.registerFactory<EmployeeCubit>(() => EmployeeCubit(getIt()));
@@ -63,6 +72,15 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<GetPlacesCubit>(() => GetPlacesCubit(getIt()));
  
  getIt.registerLazySingleton<OneBuildingRepo>(() => OneBuildingRepo(getIt()));
+  // getIt.registerFactory<OneBuildingCubit>(() => OneBuildingCubit(getIt()));
+ 
+ getIt.registerLazySingleton<GetRegionRepo>(() => GetRegionRepo(getIt()));
+  // getIt.registerFactory<OneBuildingCubit>(() => OneBuildingCubit(getIt()));
+ 
+//  getIt.registerLazySingleton<AllServicesRepo>(() => AllServicesRepo(getIt()));
+  // getIt.registerFactory<OneBuildingCubit>(() => OneBuildingCubit(getIt()));
+ 
+ getIt.registerLazySingleton<GetProfileUserRepo>(() => GetProfileUserRepo(getIt()));
   // getIt.registerFactory<OneBuildingCubit>(() => OneBuildingCubit(getIt()));
 
 

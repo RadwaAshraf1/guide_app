@@ -28,7 +28,7 @@ class AddServices extends StatelessWidget {
             verticalSpace(20),
             const ServiceTextFormField(),
             verticalSpace(100),
-            CustomButonAdmin(
+            CustomButon(
               text: 'Add',
               onPressed: () {
                 validate(context);}

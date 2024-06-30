@@ -1,9 +1,14 @@
+// ignore_for_file: prefer_const_constructors, prefer_final_fields
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:guide/dashboardadmin/dashboardadmin.dart';
+import 'package:guide/di/dependency_injection.dart';
 import 'package:guide/home.dart';
-import 'package:guide/view/screens/building/view/addbuilding.dart';
+import 'package:guide/user/profile/logic/getprofile_logic.dart';
+import 'package:guide/user/profile/view/profile.dart';
 import 'package:guide/view/screens/splashscreen.dart';
-import 'package:guide/view/screens/login/ui/user_signin.dart';
 import 'package:guide/constants/colots.dart';
 
 
@@ -19,10 +24,13 @@ class _ExampleState extends State<Example> {
   int _selectedIndex = 0;
   // static const TextStyle optionStyle =
   //     TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
-   static const List<Widget> _widgetOptions = <Widget>[
-     HomeAdmin(),
-     SplashScreen(),
-      SplashScreen(),
+   static  List<Widget> _widgetOptions = <Widget>[
+    HomeAdmin(),
+    DashboardApp(),
+    BlocProvider(
+              create: (context) =>
+                  GetProfileCubit((getIt()))..emitInsertBuildingState(),
+              child: const ProfileUserScreen()),
   ];
 
   @override

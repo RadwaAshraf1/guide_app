@@ -35,7 +35,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'login',
+              'auth/login',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -63,7 +63,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'register',
+              'auth/register',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -275,6 +275,33 @@ class _ApiService implements ApiService {
   }
 
   @override
+  Future<GetRegion> getRegiong() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<GetRegion>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'region',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = GetRegion.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<GetPlaces> getPlace() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -298,6 +325,88 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     final value = GetPlaces.fromJson(_result.data!);
+    return value;
+  }
+
+  // @override
+  // Future<Services> allServices() async {
+  //   final _extra = <String, dynamic>{};
+  //   final queryParameters = <String, dynamic>{};
+  //   final _headers = <String, dynamic>{};
+  //   const Map<String, dynamic>? _data = null;
+  //   final _result =
+  //       await _dio.fetch<Map<String, dynamic>>(_setStreamType<Services>(Options(
+  //     method: 'GET',
+  //     headers: _headers,
+  //     extra: _extra,
+  //   )
+  //           .compose(
+  //             _dio.options,
+  //             'services',
+  //             queryParameters: queryParameters,
+  //             data: _data,
+  //           )
+  //           .copyWith(
+  //               baseUrl: _combineBaseUrls(
+  //             _dio.options.baseUrl,
+  //             baseUrl,
+  //           ))));
+  //   final value = Services.fromJson(_result.data!);
+  //   return value;
+  // }
+
+  @override
+  Future<GetProfileUser> getProfile() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<GetProfileUser>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'auth/profile',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = GetProfileUser.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<UpdateProfile> updateProfile(
+      UpdateProfileRequest updateProfileRequest) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = updateProfileRequest;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<UpdateProfile>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'auth/profile/update',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = UpdateProfile.fromJson(_result.data!);
     return value;
   }
 

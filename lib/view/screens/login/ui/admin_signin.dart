@@ -10,8 +10,8 @@ import 'package:guide/view/widgets/customsizedbox.dart';
 
 import 'package:guide/view/widgets/email_password.dart';
 
-class SignInUser extends StatelessWidget {
-  const SignInUser({super.key});
+class SignInAdmin extends StatelessWidget {
+  const SignInAdmin({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class SignInUser extends StatelessWidget {
                   ),
                 ),
                  verticalSpace(40),
-                 CustomButonAdmin(
+                 CustomButon(
                     text: 'Sign in',
                     onPressed: () {
                         validateThenDoLogin(context);
@@ -54,7 +54,7 @@ class SignInUser extends StatelessWidget {
                     ),
                     TextButton(
                         onPressed: () {
-                          Navigator.of(context).pushNamed(userSignUpScreen);
+                          Navigator.of(context).pushNamed(adminSignUpScreen);
                         },
                         child: const Text(
                           'Sign Up',

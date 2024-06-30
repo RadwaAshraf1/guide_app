@@ -6,8 +6,8 @@ import 'package:guide/helper/extintion.dart';
 import 'package:guide/view/screens/signup/logic/sign_up_cubit.dart';
 import 'package:guide/view/screens/signup/logic/sign_up_state.dart';
 
-class SignupBlocListener extends StatelessWidget {
-  const SignupBlocListener({super.key});
+class AdminSignupBlocListener extends StatelessWidget {
+  const AdminSignupBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {

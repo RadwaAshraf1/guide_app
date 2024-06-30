@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:guide/constants/colots.dart';
+import 'package:guide/helper/spacing.dart';
+import 'package:guide/view/screens/place/view/widgets/getplacesblockbuilder.dart';
 // import 'package:guide/view/screens/building/data/model/getonebuilding.dart';
 import 'package:guide/view/widgets/customappbar.dart';
 
@@ -10,21 +12,23 @@ class PlaceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppBar(
+    return  Scaffold(
+      appBar: const CustomAppBar(
+        text: Text('Places',
+        style: TextStyle(color: white),),
         leadingIcon: LeadingIcon(),
       ),
-      body: ListView.builder(
-        itemCount: 19,
-        itemBuilder: (context, index) {
-          return Container(
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: black)
-            ),
-            child: Text('data'),
-          
-          );
-        },),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 16),
+        
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text("Places",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+            verticalSpace(10),
+            const GetPlacesBlockBuilder(),
+          ],
+        )),
     );
   }
 }

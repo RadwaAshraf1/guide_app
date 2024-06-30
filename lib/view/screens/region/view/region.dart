@@ -48,7 +48,7 @@ class InsertRegion extends StatelessWidget {
               ),
             ),
            verticalSpace(20),
-            CustomButonAdmin(
+            CustomButon(
               text: 'Add',
               onPressed: () {
                   validate(context);
